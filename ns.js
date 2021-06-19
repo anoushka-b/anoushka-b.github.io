@@ -209,6 +209,8 @@ function tim1(){
 }
 
 function timothy(){
+    var ds = true;
+
     var x = document.getElementById("myRange");
     var mins = x.value % 60;
     if(mins <= 9){
@@ -219,6 +221,13 @@ function timothy(){
         document.getElementById("ltt").innerHTML = "PM";
         if(hours != 12)
           hours = hours-12;
+
+        if(ds == true){
+            if(hours == 12)
+                hours = 1;
+            else
+                hours++;
+        }
     }else
         document.getElementById("ltt").innerHTML = "AM";
 
